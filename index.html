@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Interactive information display of point emissions </title>
+	<title>NZ COVID-19 cases over time</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,13 +59,13 @@
 <body>
 
 
-<h1 id="title"> Point Emissions of 2018 over Northeast China </h1>
+<h1 id="title">NZ COVID-19 cases over time</h1>
 <div id="map"></div>
 <div id="plots"></div>
 <script>
 
     var map = L.map('map', {
-        center: [43.880726,125.35118422],
+        center: [-41.235726,172.5118422],
         zoom: 6,
         minZoom: 5,
         maxZoom: 13
@@ -102,12 +102,12 @@
 
     var cmap = chroma.scale([chroma.hsv(0, 1, 1), chroma.hsv(90, 1, 1), chroma.hsv(180, 1, 1), chroma.hsv(270, 1, 1)]).mode("hsv").domain([10, 1]);
 
-    $.getJSON("point_emissions_data.json", function(data) {
+    $.getJSON("cases.json", function(data) {
         console.log(data)
         locationSummary = {}
         for (var i in data) {
             var c = data[i];
-            if (c.LocationName == 'Waitemata') c.LocationName = "Changchun";
+            if (c.LocationName == 'Waitemata') c.LocationName = "Auckland";
             if (c.LocationName == 'Southern DHB') c.LocationName = "Dunedin";
             c.LocationName = c.LocationName.replace(" Region", "")
             if (!locationSummary[c.LocationName]) {
