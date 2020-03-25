@@ -19,7 +19,7 @@
     "CaseType": "confirmed"
   }£¬
   {
-    "CaseNumber": 1,
+    "CaseNumber": 2,
     "LocationName": "Changchun",
     "LocationCentrePoint": {
       "type": "Point",
