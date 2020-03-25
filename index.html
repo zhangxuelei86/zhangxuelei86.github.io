@@ -102,12 +102,12 @@
 
     var cmap = chroma.scale([chroma.hsv(0, 1, 1), chroma.hsv(90, 1, 1), chroma.hsv(180, 1, 1), chroma.hsv(270, 1, 1)]).mode("hsv").domain([10, 1]);
 
-    $.getJSON("C:\Users\ZXL5510\Desktop\Interactive-display-on-map\point_emissions_data.json", function(data) {
+    $.getJSON("point_emissions_data.json", function(data) {
         console.log(data)
         locationSummary = {}
         for (var i in data) {
             var c = data[i];
-            if (c.LocationName == 'Waitemata') c.LocationName = "Auckland";
+            if (c.LocationName == 'Waitemata') c.LocationName = "Changchun";
             if (c.LocationName == 'Southern DHB') c.LocationName = "Dunedin";
             c.LocationName = c.LocationName.replace(" Region", "")
             if (!locationSummary[c.LocationName]) {
