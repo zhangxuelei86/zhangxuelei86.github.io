@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js" integrity="sha256-rVeyUZMfAHhQJ7hvWaHrKknTDdqGcn1gxBBJA++E4z8=" crossorigin="anonymous"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
-    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js" ></script>
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.3/chroma.min.js"></script>
     <style>
         body, html, #map {
@@ -58,7 +58,7 @@
 <body>
 
 
-<h1 id="title"> Point Emissions of 2018 over Northeast China </h1>
+<h1 id="title"> µ„‘¥≈≈∑≈Point Emissions of 2018 over Northeast China </h1>
 <div id="map"></div>
 <div id="plots"></div>
 <script>
@@ -101,7 +101,11 @@
 
     var cmap = chroma.scale([chroma.hsv(0, 1, 1), chroma.hsv(90, 1, 1), chroma.hsv(180, 1, 1), chroma.hsv(270, 1, 1)]).mode("hsv").domain([10, 1]);
 
+<<<<<<< HEAD
     $.getJSON("cases.json", function(data) {
+=======
+    $.getJSON("point_emissions_data.json", function(data) {
+>>>>>>> parent of 0b02a3c... Update index.html
         console.log(data)
         locationSummary = {}
         for (var i in data) {
