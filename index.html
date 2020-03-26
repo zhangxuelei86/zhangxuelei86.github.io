@@ -4,7 +4,7 @@
 <head>
 	<title>Interactive information display of point emissions </title>
        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" charset=utf-8 content="width=device-width, initial-scale=1.0">
 	
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
 
@@ -101,12 +101,7 @@
 
     var cmap = chroma.scale([chroma.hsv(0, 1, 1), chroma.hsv(90, 1, 1), chroma.hsv(180, 1, 1), chroma.hsv(270, 1, 1)]).mode("hsv").domain([10, 1]);
 
-       $.ajax({
-        type: "POST",
-        url: "point_emissions_data.json",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json", 
-        function(data) {
+    $.getJSON("cases.json", function(data) {
         console.log(data)
         locationSummary = {}
         for (var i in data) {
