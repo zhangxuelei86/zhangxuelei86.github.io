@@ -101,11 +101,12 @@
 
     var cmap = chroma.scale([chroma.hsv(0, 1, 1), chroma.hsv(90, 1, 1), chroma.hsv(180, 1, 1), chroma.hsv(270, 1, 1)]).mode("hsv").domain([10, 1]);
 
-    $.ajaxSetup({
-        scriptCharset: "utf-8",
-        contentType: "application/json; charset=utf-8"
-                 });
-    $.getJSON("point_emissions_data.json", function(data) {
+       $.ajax({
+        type: "POST",
+        url: "point_emissions_data.json",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json", 
+        function(data) {
         console.log(data)
         locationSummary = {}
         for (var i in data) {
